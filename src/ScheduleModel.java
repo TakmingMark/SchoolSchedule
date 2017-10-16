@@ -12,6 +12,7 @@ public class ScheduleModel {
 	private String remindEvent;
 	
 	private File file=null;
+	private String separateSymbol="|$|";
 	private ScheduleModel() {
 	
 		// TODO Auto-generated constructor stub
@@ -33,11 +34,11 @@ public class ScheduleModel {
 	
 	public void outPutFileToDoList() {
 		BufferedWriter bufferedWriter;
+		String text;
 		try {
 			bufferedWriter=new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file)));
-			bufferedWriter.write("test");
-			bufferedWriter.newLine();
-			bufferedWriter.write("§A¦n0");
+			text=selectDay+separateSymbol+selectTime+separateSymbol+remindEvent+separateSymbol;
+			bufferedWriter.write(text);
 			bufferedWriter.newLine();
 			bufferedWriter.flush();
 		} catch (IOException e) {
