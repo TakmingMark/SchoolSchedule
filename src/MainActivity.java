@@ -1,5 +1,3 @@
-import javax.naming.InitialContext;
-
 public class MainActivity {
 	ScheduleModel scheduleModel;
 	ScheduleView scheduleView;
