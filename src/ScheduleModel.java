@@ -1,9 +1,19 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 public class ScheduleModel {
 	private String selectDay;
 	private String selectTime;
 	private String remindEvent;
+	
+	private File file=null;
 	private ScheduleModel() {
+	
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -17,7 +27,23 @@ public class ScheduleModel {
 		this.remindEvent=remindEvent;
 	}
 	
-	public void writeToDoList() {
+	public void setFilePath(String filePath) {
+		file=new File(filePath);
+	}
+	
+	public void outPutFileToDoList() {
+		BufferedWriter bufferedWriter;
+		try {
+			bufferedWriter=new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file)));
+			bufferedWriter.write("test");
+			bufferedWriter.newLine();
+			bufferedWriter.write("§A¦n0");
+			bufferedWriter.newLine();
+			bufferedWriter.flush();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
