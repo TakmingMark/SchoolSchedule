@@ -13,7 +13,7 @@ public class MainActivity {
 		scheduleView=ScheduleView.getSCheduleViewObject(scheduleModel);
 		scheduleView.initialSCheduleView();
 		scheduleController=ScheduleController.getSCheduleController(scheduleView,scheduleModel);
-
+		scheduleController.setModelFilePath();
 	}
 
 }

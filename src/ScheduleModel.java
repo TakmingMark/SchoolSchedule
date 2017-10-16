@@ -1,9 +1,13 @@
+import java.io.File;
 
 public class ScheduleModel {
 	private String selectDay;
 	private String selectTime;
 	private String remindEvent;
+	
+	private File file=null;
 	private ScheduleModel() {
+	
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -15,6 +19,10 @@ public class ScheduleModel {
 		this.selectDay=selectDay;
 		this.selectTime=selectTime;
 		this.remindEvent=remindEvent;
+	}
+	
+	public void setFilePath(String filePath) {
+		file=new File(filePath);
 	}
 	
 	public void writeToDoList() {
