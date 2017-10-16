@@ -9,7 +9,7 @@ public class MainActivity {
 		new MainActivity().initialSchedule();
 	}
 	private void initialSchedule() {
-		scheduleModel.getSCheduleModelObject();
+		scheduleModel=ScheduleModel.getSCheduleModelObject();
 		scheduleView=ScheduleView.getSCheduleViewObject(scheduleModel);
 		scheduleView.initialSCheduleView();
 		scheduleController=ScheduleController.getSCheduleController(scheduleView,scheduleModel);
